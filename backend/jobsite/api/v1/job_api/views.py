@@ -72,18 +72,20 @@ def create_job(request):
 def jobs(request):
     instances = Job.objects.filter(is_deleted=False)
     paginator = StandardResultSetPagination()
-    jobs = paginator.paginate_queryset(instances,request)
-    serializer = JobListSerializer(jobs, many=True)
+    paginated_jobs = paginator.paginate_queryset(instances, request)
+    serializer = JobListSerializer(paginated_jobs, many=True)    
     response_data = {
-        "status_code" :200,
-        "title" : "Jobs List",
-        "count" : paginator.page.paginator.count,
-        "links" : {
-            "next" : paginator.get_next_link(),
-            "previous" : paginator.get_previous_link()
-        },
-        "list_data" : serializer.data
-    }
+        "status": 200,
+        "message": "Jobs List",
+        "data": serializer.data,
+        "meta": {
+            "count": paginator.page.paginator.count,
+            "pagination": {
+                "next": paginator.get_next_link(),
+                "previous": paginator.get_previous_link(),
+            }
+        }
+    }    
     return Response(response_data)
 
 
