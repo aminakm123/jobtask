@@ -4,6 +4,11 @@ import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
   {
+    title: "Jobs",
+    href: "/jobs",
+    icon: "bi bi-speedometer2",
+  },
+  {
     title: "Dashboard",
     href: "/starter",
     icon: "bi bi-speedometer2",
