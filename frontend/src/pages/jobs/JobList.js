@@ -86,44 +86,6 @@ const JobList = () => {
         </Card>
       </Col>
     </Row>
-    // <div>
-    //   <h1>Job List</h1>
-    //   <table>
-    //     <thead>
-    //       <tr>
-    //         <th>Title</th>
-    //         <th>Description</th>
-    //         <th>Salary From</th>
-    //         <th>Salary To</th>
-    //         <th>Experience</th>
-    //         <th>Skills</th>
-    //         <th>Company</th>
-    //         <th>Actions</th> {/* New column for actions */}
-    //       </tr>
-    //     </thead>
-    //     <tbody>
-    //       {jobs.map(job => (
-    //         <tr key={job.id}>
-    //           <td>{job.title}</td>
-    //           <td>{job.description}</td>
-    //           <td>{job.salary_from}</td>
-    //           <td>{job.salary_to}</td>
-    //           <td>{job.experience}</td>
-    //           <td>{job.skills}</td>
-    //           <td>{job.company}</td>
-    //           <td>
-    //             {/* Edit button */}
-    //             <Link to={`/update/${job.id}/`}>
-    //               <button>Edit</button>
-    //             </Link>
-    //             {/* Delete button */}
-    //             <button onClick={() => handleDelete(job.id)}>Delete</button>
-    //           </td>
-    //         </tr>
-    //       ))}
-    //     </tbody>
-    //   </table>
-    // </div>
   );
 };
 
